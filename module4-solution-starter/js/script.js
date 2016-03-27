@@ -116,20 +116,21 @@ function buildAndShowHomeHTML (categories) {
       // Hint: you need to surround the chosen category short name with something before inserting
       // it into the home html snippet. 
       // 
-    var insertProperty = function (short_name) {
+    var insertProperty = function (chosenCategoryShortName) {
   var propToReplace = "{{" + propName + "}}";
   string = string
     .replace(new RegExp(propToReplace, "g"), propValue);
-  return string;
+  
 }
 
       // TODO: STEP 4: Insert the the produced HTML in STEP 3 into the main page
       // Use the existing insertHtml function for that purpose. Look through this code for an example
       // of how to do that. 
       // ....
-      var insertHtml = function (short_name, html) {
-    var targetElem = document.querySelector(short_name);
+      var insertHtml = function (propValue, html) {
+    var targetElem = document.querySelector(propValue);
     targetElem.innerHTML = html;
+    return string;
 };
     },
     false); // False here because we are getting just regular HTML from the server, so no need to process JSON.
